@@ -20,6 +20,22 @@ Builds a UXR research plan from a problem statement. Asks narrowing questions, g
 
 ---
 
+### `/create-survey`
+Two-phase workflow for building Sprig surveys:
+1. **Problem → Notion spec:** Asks narrowing questions, triages hypotheses (data vs survey), designs questions with rationale blocks, creates a Notion survey spec page for review
+2. **Notion spec → Sprig file:** After review/feedback, converts the spec into a Sprig-compatible upload file
+
+**Usage:**
+```bash
+# Phase 1: Design the survey
+/create-survey "Why don't repeat same-seller buyers bundle?"
+
+# Phase 2: Generate Sprig upload file from reviewed spec
+/create-survey --sprig https://notion.so/Survey-Spec-Page-ID
+```
+
+---
+
 ### `/synthesize-survey`
 Analyzes a Sprig CSV export and produces a structured Notion report with statistical analysis, cross-tabs, open-text themes, and actionable findings.
 
@@ -51,28 +67,28 @@ Analyzes a Sprig CSV export and produces a structured Notion report with statist
 
 ```bash
 # Clone the repo
-git clone https://github.com/cosaka9/uxr-survey-skills.git /tmp/uxr-survey-skills
+git clone https://github.com/cosaka9/mercari-uxr-skills.git /tmp/mercari-uxr-skills
 
 # Copy the skill into your Claude Code skills directory
-cp -r /tmp/uxr-survey-skills/synthesize-survey ~/.claude/skills/synthesize-survey
+cp -r /tmp/mercari-uxr-skills/synthesize-survey ~/.claude/skills/synthesize-survey
 
 # Clean up
-rm -rf /tmp/uxr-survey-skills
+rm -rf /tmp/mercari-uxr-skills
 ```
 
 ### Option B: Symlink (auto-updates when you pull)
 
 ```bash
 # Clone to a permanent location
-git clone https://github.com/cosaka9/uxr-survey-skills.git ~/uxr-survey-skills
+git clone https://github.com/cosaka9/mercari-uxr-skills.git ~/mercari-uxr-skills
 
 # Symlink into Claude Code
-ln -s ~/uxr-survey-skills/synthesize-survey ~/.claude/skills/synthesize-survey
+ln -s ~/mercari-uxr-skills/synthesize-survey ~/.claude/skills/synthesize-survey
 ```
 
 Then pull to update:
 ```bash
-cd ~/uxr-survey-skills && git pull
+cd ~/mercari-uxr-skills && git pull
 ```
 
 ### Verify installation
