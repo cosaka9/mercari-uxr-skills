@@ -1,8 +1,24 @@
-# UXR Survey Skills for Claude Code
+# UXR Skills for Claude Code
 
-Shared Claude Code skills for analyzing Sprig survey exports. Install once, run from any project.
+Shared Claude Code skills for user research. Install once, run from any project.
 
 ## Skills
+
+### `/create-research-plan`
+Builds a UXR research plan from a problem statement. Asks narrowing questions, generates hypotheses, and triages each one as data-answerable or UXR-required before designing any surveys or interviews.
+
+**Key feature:** Every hypothesis gets a traffic light:
+- **Data can answer this** — skip the research, run the query
+- **Data gives a partial signal** — data shows *what*, UXR explains *why*
+- **Only UXR can answer this** — design the right method
+
+**Usage:**
+```bash
+/create-research-plan "Why do sellers list $200+ items on eBay instead of Mercari?"
+/create-research-plan https://notion.so/Your-Problem-Brief-Page-ID
+```
+
+---
 
 ### `/synthesize-survey`
 Analyzes a Sprig CSV export and produces a structured Notion report with statistical analysis, cross-tabs, open-text themes, and actionable findings.
