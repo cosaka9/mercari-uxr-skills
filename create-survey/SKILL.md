@@ -158,7 +158,7 @@ Part of [link to research plan if applicable]
 <td>**Field**</td>
 <td>**Detail**</td>
 </tr>
-<tr><td>Audience</td><td>[Behavioral definition]</td></tr>
+<tr><td>Audience</td><td>[Behavioral definition] + user_status = alive</td></tr>
 <tr><td>Trigger</td><td>[Event + conditions]</td></tr>
 <tr><td>Sample</td><td>[Target n]</td></tr>
 <tr><td>Max path</td><td>[N Qs (~X sec)]</td></tr>
@@ -397,6 +397,7 @@ Every question must be:
 
 ### Audience targeting
 - Define by **behavior** (what they did), not demographics
+- **Always include `user_status = alive`** in the audience filter — never survey banned, suspended, or deactivated users
 - Include the trigger event and any qualifying conditions
 - Note mutual exclusions with other active surveys
 - Hard cap at 1 response per user unless explicitly designing for longitudinal
