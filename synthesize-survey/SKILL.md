@@ -212,6 +212,11 @@ What does the data NOT answer? What follow-up research or analysis would close t
 
 Create the page in the US Documents database: `collection://30a7fa9f-faef-80e5-9ee7-000b6f11ae2b`
 
+**Required page properties (set on every page created by this skill):**
+- `Team&PJ`: `["https://www.notion.so/2b07fa9ffaef807cbe3bfe33bdd8fdc9"]` (US UXR)
+- `Category`: `["Share-out"]`
+- `Status`: `"New"`
+
 ### Page structure — Targeted survey (3-10 questions)
 
 ```
