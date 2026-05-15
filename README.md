@@ -36,6 +36,27 @@ Two-phase workflow for building Sprig surveys:
 
 ---
 
+### `/prep-interviews`
+End-to-end interview preparation: recruit from Sprig opt-ins, screen user IDs against Looker (status, admin notes, red flags), enrich with behavioral data, rank top 20 candidates by research plan alignment, generate Calendly setup + scheduling email.
+
+**Usage:**
+```bash
+# From Sprig survey with opt-ins
+/prep-interviews /path/to/survey-export.csv --plan https://notion.so/Research-Plan-ID
+
+# From a manual user ID list
+/prep-interviews /path/to/user-ids.csv --plan https://notion.so/Research-Plan-ID
+```
+
+**Workflow:**
+1. Extract opt-in user IDs from Sprig CSV
+2. Screen each against Looker: status must be "alive", no red flags in admin notes
+3. Enrich with L12M behavioral data (GMV, orders, categories, AOV, tenure)
+4. Score & rank top 20 by alignment with research plan segments
+5. Output enriched CSV + Calendly setup instructions + ready-to-send scheduling email
+
+---
+
 ### `/synthesize-survey`
 Analyzes a Sprig CSV export and produces a structured Notion report with statistical analysis, cross-tabs, open-text themes, and actionable findings.
 
