@@ -82,6 +82,33 @@ Analyzes a Sprig CSV export and produces a structured Notion report with statist
 /synthesize-survey /path/to/survey.csv --baseline /path/to/prior.csv --behavior /path/to/looker.csv --spec https://notion.so/Survey-Spec-Page-ID
 ```
 
+### `/interview-notes-synthesis`
+Synthesizes raw UXR interview notes (from a Notion meeting recording) and team debrief comments (from the participant's Slack calendar post in #us-team-uxr-updates) into a standardized interview page and Slack insight drop post.
+
+**Outputs:**
+1. **Notion page:** Participant profile callout, interview summary with key quote, pain points ranked by priority (🔴/🟡/🟢), what's working well, market context, feature requests, action items, and strategic recommendations
+2. **Slack post:** "Interview Insight Drop" with a casual opening line, key quote, top pain points, and a bonus signal
+
+**Usage:**
+```bash
+# From a Notion meeting notes page
+/interview-notes-synthesis https://notion.so/Meeting-Notes-Page-ID
+
+# From a page ID
+/interview-notes-synthesis 34b7fa9ffaef80369c4fe21acd9df9aa
+```
+
+**Workflow:**
+1. Fetch raw meeting notes from Notion
+2. Collect team debrief comments from the participant's calendar post in #us-team-uxr-updates
+3. Extract participant profile, pain points, quotes, and market context
+4. Synthesize into standardized Notion page format (preserving meeting notes/transcript blocks)
+5. Generate Slack insight drop post
+6. Present both for user review and feedback
+7. Send confirmed Slack post to #us-team-uxr-updates
+
+---
+
 ## Install
 
 ### Option A: Copy the skill folder (simplest)
